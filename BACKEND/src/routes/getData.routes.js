@@ -14,15 +14,27 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/add", async (req, res) => {
-    try {
-        const employee = new empModel(req.body);
+  try {
+    const { email } = req.body;
 
-        const newEmployee = await employee.save();
+    // Check if email already exists
+    const existingEmployee = await empModel.findOne({ email });
 
-        res.status(201).json(newEmployee);
-    } catch (err) {
-        res.status(500).json({ message: err.message });
+    if (existingEmployee) {
+      return res.status(409).json({
+        message: "Email already exists",
+      });
     }
+
+    const employee = new empModel(req.body);
+    const newEmployee = await employee.save();
+
+    res.status(201).json(newEmployee);
+  } catch (err) {
+    res.status(500).json({
+      message: err.message,
+    });
+  }
 });
 
 

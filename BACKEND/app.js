@@ -4,6 +4,12 @@ import getData from "./src/routes/getData.routes.js"
 import dotenv from "dotenv"
 import cors from "cors"
 import auth from "./src/routes/auth.routes.js"
+import dns from "dns"
+
+dns.setServers([
+  '1.1.1.1',
+  '8.8.8.8'
+])
 
 dotenv.config()
 
