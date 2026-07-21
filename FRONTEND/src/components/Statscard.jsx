@@ -19,7 +19,7 @@ const StatsCard = () => {
   const getStats = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:3000/employees/dashboard"
+        "https://employee-managementy-system.onrender.com/employees/dashboard"
       );
 
       setStats(res.data);

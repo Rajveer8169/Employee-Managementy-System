@@ -25,7 +25,7 @@ const AddEmployee = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/employees/add",
+        "https://employee-managementy-system.onrender.com/employees/add",
         employee
       );
 

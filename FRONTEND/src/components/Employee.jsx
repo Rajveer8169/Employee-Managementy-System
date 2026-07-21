@@ -8,7 +8,7 @@ const Employees = () => {
 
   const getEmployees = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/employees");
+      const res = await axios.get("https://employee-managementy-system.onrender.com/employees");
       setEmployees(res.data);
     } catch (err) {
       console.log(err);
@@ -25,7 +25,7 @@ const Employees = () => {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:3000/employees/delete/${id}`);
+      await axios.delete(`https://employee-managementy-system.onrender.com/delete/${id}`);
 
       setEmployees(employees.filter((emp) => emp._id !== id));
     } catch (err) {

@@ -17,7 +17,7 @@ const EditEmployee = () => {
     const fetchEmployee = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3000/employees/${id}`
+          `https://employee-managementy-system.onrender.com/employees/${id}`
         );
 
         setEmployee(res.data);
@@ -41,7 +41,7 @@ const EditEmployee = () => {
 
     try {
       await axios.patch(
-        `http://localhost:3000/employees/edit/${id}`,
+        `https://employee-managementy-system.onrender.com/edit/${id}`,
         employee
       );
 
