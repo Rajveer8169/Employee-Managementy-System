@@ -22,7 +22,7 @@ const Register = () => {
 
     try {
       await axios.post(
-        "http://localhost:3000/auth/register",
+        "https://employee-managementy-system.onrender.com/auth/register",
         user
       );
 
